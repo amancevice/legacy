@@ -1,0 +1,20 @@
+<h2>Picks</h2>
+<%= @user_.score %>&nbsp;/&nbsp;<%= @user_.max_score %>
+<br />
+
+<% @user_.picks.each do |pick| %>
+  <h3><%= pick.category.name %></h3>
+  <% @option     = pick.option %>
+  <% @pick       = pick %>
+  <% @pick_class = '' %>
+  <% @checked    = false %>
+  <% @points     = @pick.points %>
+  <% if @pick.correct? %>
+    <% @pick_class = "points-#{@pick.bonus.nil? ? @option.points : 'P'}" %>
+    <% @checked    = true %>
+  <% elsif @pick.incorrect? && @pick.penalty %>
+    <% @pick_class = "points-N" %>
+    <% @points     = @pick.penalty %>
+  <% end %>
+  <%= erb :option %>
+<% end %>

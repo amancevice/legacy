@@ -1,0 +1,54 @@
+/*
+  Points
+  #468966
+  #FFF0A5
+  #FFB03B
+  #B64926
+  #8E2800
+
+  Greys
+  #455A64
+  #607D8B
+  #CFD8DC
+*/
+
+body {
+  background-color: #CFD8DC;
+}
+
+a, a:link, a:visited, a:active, a:hover{
+  color: #CFD8DC;
+  text-decoration: none
+}
+
+.app-bar {
+  background-color: #607D8B;
+}
+
+.app-bar-container {
+  background-color: #607D8B;
+}
+
+.navdrawer-container {
+  background-color: #455A64;
+}
+
+.pick {
+  padding: 10px 30px 10px 10px;
+  background-color: #607D8B;
+  color: #EEE;
+  font-weight: bold;
+  height: 42px;
+}
+.points-1 { background-color: #468966 }
+.points-2 { background-color: #FFF0A5; color: #455A64; }
+.points-3 { background-color: #FFB03B }
+.points-4 { background-color: #B64926 }
+.points-5 { background-color: #8E2800 }
+
+
+footer {
+  clear: both;
+  height: 100px;
+  font-weight:
+}

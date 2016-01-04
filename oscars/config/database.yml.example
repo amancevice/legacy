@@ -1,0 +1,9 @@
+defaults: &defaults
+  adapter:  postgresql
+  encoding: unicode
+  pool:     5
+
+development:
+  <<: *defaults
+  database: oscars
+  host:     localhost

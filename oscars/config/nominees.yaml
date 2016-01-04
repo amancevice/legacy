@@ -1,0 +1,292 @@
+Original Score:
+    - name   : The Theory of Everything
+      points : 1
+    - name   : The Grand Budapest Hotel
+      points : 3
+    - name   : The Imitation Game
+      points : 3
+    - name   : Interstellar
+      points : 3
+    - name   : Mr. Turner
+      points : 5
+    - name   : Inherent Vice
+      points : 5
+Original Song:
+    - name     : Glory
+      subtitle : Selma
+      points   : 1
+    - name     : Everything is Awesome
+      subtitle : The Lego Movie
+      points   : 3
+    - name     : Lost Stars
+      subtitle : Begin Again
+      points   : 3
+    - name     : I'm Not Gonna Miss You
+      subtitle : "Glen Campbell: I'll Be Me"
+      points   : 5
+    - name     : Grateful
+      subtitle : Beyond the Lights
+      points   : 5
+Visual Effects:
+    - name   : Interstellar
+      points : 1
+    - name   : Dawn of the Planet of the Apes
+      points : 1
+    - name   : Guardians of the Galaxy
+      points : 3
+    - name   : "X-Men: Days of Future Past"
+      points : 5
+    - name   : "Captain America: The Winter Soldier"
+      points : 5
+Sound Editing:
+    - name   : American Sniper
+      points : 1
+    - name   : Interstellar
+      points : 3
+    - name   : Birdman
+      points : 3
+    - name   : Unbroken
+      points : 5
+    - name   : "The Hobbit: The Battle of the Five Armies"
+      points : 5
+Sound Mixing:
+    - name   : American Sniper
+      points : 1
+    - name   : Interstellar
+      points : 3
+    - name   : Birdman
+      points : 3
+    - name   : Unbroken
+      points : 5
+    - name   : Whiplash
+      points : 5
+Documentary Short:
+    - name   : "Crisis Hotline: Veterans Press 1"
+      points : 1
+    - name   : Joanna
+      points : 3
+    - name   : The Reaper
+      points : 3
+Live Action Short:
+    - name   : The Phone Call
+      points : 1
+    - name   : Butter Lamp
+      points : 1
+    - name   : Boogaloo & Graham
+      points : 3
+    - name   : Aya
+      points : 3
+    - name   : Parvenah
+      points : 5
+Animated Short:
+    - name   : Feast
+      points : 1
+    - name   : The Bigger Picture
+      points : 1
+    - name   : The Dam Keeper
+      points : 3
+    - name   : Me and My Moulton
+      points : 5
+    - name   : A Single Life
+      points : 5
+Costume Design:
+    - name   : The Grand Budapest Hotel
+      points : 1
+    - name   : Inherent Vice
+      points : 5
+    - name   : Into the Woods
+      points : 1
+    - name   : Maleficent
+      points : 3
+    - name   : Mr. Turner
+      points : 5
+Production Design:
+    - name   : The Grand Budapest Hotel
+      points : 1
+    - name   : The Imitation Game
+      points : 5
+    - name   : Interstellar
+      points : 5
+    - name   : Into the Woods
+      points : 1
+    - name   : Mr. Turner
+      points : 3
+Editing:
+    - name   : American Sniper
+      points : 5
+    - name   : The Imitation Game
+      points : 3
+    - name   : The Grand Budapest Hotel
+      points : 3
+    - name   : Boyhood
+      points : 1
+    - name   : Whiplash
+      points : 1
+Cinematography:
+    - name   : Birdman or (The Unexpected Virtue of Ignorance)
+      points : 1
+    - name   : The Grand Budapest Hotel
+      points : 3
+    - name   : Ida
+      points : 3
+    - name   : Mr. Turner
+      points : 5
+    - name   : Unbroken
+      points : 3
+Documentary Feature:
+    - name   : CitizenFour
+      points : 1
+    - name   : Finding Vivian Maier
+      points : 3
+    - name   : Last Days in Vietnam
+      points : 5
+    - name   : The Salt of the Earth
+      points : 3
+    - name   : Virunga
+      points : 1
+Animated Feature:
+    - name   : The Boxtrolls
+      points : 5
+    - name   : Song of the Sea
+      points : 3
+    - name   : The Tale of the Princess Kaguya
+      points : 3
+    - name   : How To Train Your Dragon 2
+      points : 1
+    - name   : Big Hero 6
+      points : 1
+Foreign Language Film:
+    - name     : Ida
+      subtitle : Poland
+      points   : 1
+    - name     : Leviathan
+      subtitle : Russia
+      points   : 1
+    - name     : Tangerines
+      subtitle : Estonia
+      points   : 5
+    - name     : Timbuktu
+      subtitle : Mauritania
+      points   : 5
+    - name     : Wild Tales
+      subtitle : Argentina
+      points   : 3
+Adapted Screenplay:
+    - name   : American Sniper
+      points : 3
+    - name   : The Imitation Game
+      points : 1
+    - name   : Inherent Vice
+      points : 5
+    - name   : The Theory of Everything
+      points : 3
+    - name   : Whiplash
+      points : 1
+Original Screenplay:
+    - name   : Birdman or (The Unexpected Virtue of Ignorance)
+      points : 1
+    - name   : Boyhood
+      points : 3
+    - name   : Foxcatcher
+      points : 5
+    - name   : The Grand Budapest Hotel
+      points : 1
+    - name   : Nightcrawler
+      points : 5
+Supporting Actress:
+    - name     : Patricia Arquette
+      subtitle : Boyhood
+      points   : 1
+    - name     : Laura Dern
+      subtitle : Wild
+      points   : 5
+    - name     : Keira Knightley
+      subtitle : The Imitation Game
+      points   : 5
+    - name     : Emma Stone
+      subtitle : Birdman or (The Unexpected Virtue of Ignorance)
+      points   : 5
+    - name     : Meryl Streep
+      subtitle : Into the Woods
+      points   : 3
+Supporting Actor:
+    - name     : Robert Duvall
+      subtitle : The Judge
+      points   : 5
+    - name     : Ethan Hawke
+      subtitle : Boyhood
+      points   : 3
+    - name     : Edward Norton
+      subtitle : Birdman or (The Unexpected Virtue of Ignorance)
+      points   : 3
+    - name     : Mark Ruffalo
+      subtitle : Foxcatcher
+      points   : 5
+    - name     : J.K. Simmons
+      subtitle : Whiplash
+      points   : 1
+Actress:
+    - name     : Marion Cotillard
+      subtitle : Two Days, One Night
+      points   : 5
+    - name     : Felicity Jones
+      subtitle : The Theory of Everything
+      points   : 5
+    - name     : Julianne Moore
+      subtitle : Still Alice
+      points   : 1
+    - name     : Rosamund Pike
+      subtitle : Gone Girl
+      points   : 5
+    - name     : Reese Witherspoon
+      subtitle : Wild
+      points   : 3
+Actor:
+    - name     : Steve Carell
+      subtitle : Foxcatcher
+      points   : 5
+    - name     : Bradley Cooper
+      subtitle : American Sniper
+      points   : 5
+    - name     : Benedict Cumberbatch
+      subtitle : The Imitation Game
+      points   : 5
+    - name     : Michael Keaton
+      subtitle : Birdman or (The Unexpected Virtue of Ignorance)
+      points   : 3
+    - name     : Eddie Redmayne
+      subtitle : The Theory of Everything
+      points   : 1
+Director:
+    - name     : Alejandro G. Iñárritu
+      subtitle : Birdman or (The Unexpected Virtue of Ignorance)
+      points   : 3
+    - name     : Richard Linklater
+      subtitle : Boyhood
+      points   : 3
+    - name     : Bennett Miller
+      subtitle : Foxcatcher
+      points   : 5
+    - name     : Wes Anderson
+      subtitle : The Grand Budapest Hotel
+      points   : 5
+    - name     : Morten Tyldum
+      subtitle : The Imitation Game
+      points   : 5
+Best Picture:
+    - name   : American Sniper
+      points : 5
+    - name   : Birdman or (The Unexpected Virtue of Ignorance)
+      points : 3
+    - name   : Boyhood
+      points : 3
+    - name   : The Grand Budapest Hotel
+      points : 5
+    - name   : The Imitation Game
+      points : 5
+    - name   : Selma
+      points : 3
+    - name   : The Theory of Everything
+      points : 5
+    - name   : Whiplash
+      points : 5

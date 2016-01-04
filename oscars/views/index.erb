@@ -1,0 +1,5 @@
+<% if @user.nil? %>
+  <%= erb :login %>
+<% else %>
+  <%= erb :welcome %>
+<% end %>

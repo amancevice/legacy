@@ -1,0 +1,34 @@
+<h3><%= @category.name %></h3>
+<br />
+<% @category.options.each do |option| %>
+  <a href="<%= 'admin/' unless @admin.nil? %><%= URI::encode @category.name %>/<%= URI::encode option.name %>">
+    <% @option     = option %>
+    <% @pick       = @user.picks.find_by category:@category, option:@option %>
+    <% @pick_class = "points-#{@option.points}" %>
+    <% @checked    = false %>
+    <% @points     = @option.points %>
+    <% unless @pick.nil? %>
+      <% @pick_class = "points-#{@pick.bonus.nil? ? @option.points : 'P'}" %>
+      <% @checked    = true %>
+      <% @points     = @pick.points %>
+    <% end %>
+    <%= erb :option %>
+  </a>
+<% end %>
+<br />
+<% @pick = @user.picks.find_by(category:@category) %>
+<% unless @pick.nil? %>
+  <% href  = @category.next.nil? ? 'picks'  : @category.next.name %>
+  <% label = @category.next.nil? ? 'Finish' : @category.next.name %>
+  <a href="/<%= URI::encode href %>">
+    <div class="category-nav">
+      <%= label %>
+      <strong>&nbsp;&#10093;</strong>
+    </div>
+  </a>
+  <% if !@user.locked? && @pick.bonus.nil? %>
+    <a href="<%= URI::encode @category.name %>/<%= URI::encode @pick.option.name %>/gild">
+      <div class="gild">Double down</div>
+    </a>
+  <% end %>
+<% end %>

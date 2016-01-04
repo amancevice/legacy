@@ -1,0 +1,6 @@
+<div class="pick <%= @pick_class %>" style="width: 100%;">
+  <%= '&#10003;' if @checked %>
+  <strong><%= @option.name %></strong>
+  <em><%= @option.subtitle %></em>
+  <em style="float: right;"><%= @points %></em>
+</div>

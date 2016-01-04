@@ -1,0 +1,39 @@
+<% Pooler::Category.all.each do |category| %>
+  <h3><%= category.name %></h3>
+  <br />
+  <% category.options.each do |option| %>
+    <a href="<%= 'admin/' unless @admin.nil? %><%= URI::encode category.name %>/<%= URI::encode option.name %>">
+      <% @option     = option %>
+      <% @pick_class = option.correct? ? "points-#{option.points}" : '' %>
+      <% @points     = option.points %>
+      <%= erb :option %>
+    </a>
+  <% end %>
+<% end %>
+
+<br />
+
+<h3>Users</h3>
+<em>Click a user to mark as paid/unpaid</em>
+<% Pooler::User.all.order(:username).each do |user| %>
+
+  <% @status     = "" %>
+  <% @pick_class = "" %>
+  <% if !user.locked? && !user.paid? %>
+    <% @status = "(not locked in/not paid)" %>
+  <% elsif !user.locked? && user.paid? %>
+    <% @status = "(not locked in/paid)" %>
+  <% elsif user.locked? && !user.paid? %>
+    <% @status = "(locked in/not paid)" %>
+    <% @pick_class = "points-N" %>
+  <% else %>
+    <% @pick_class = "points-P" %>
+  <% end %>
+
+  <a href="/admin/<%= URI::encode user.username %>/paid">
+    <div class="pick <%= @pick_class %>" style="width: 100%;">
+      <strong><%= user.username %></strong>
+      <em style="float: right;"><%= @status %></em>
+    </div>
+  </a>
+<% end %>

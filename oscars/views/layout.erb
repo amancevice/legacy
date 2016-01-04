@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Oscar Pool 2015</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="196x196" href="images/touch/chrome-touch-icon-196x196.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <!-- build:css styles/components/main.min.css -->
+    <%= css :app %>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <!-- endbuild -->
+  </head>
+
+  <body>
+    <header class="app-bar promote-layer">
+      <div class="app-bar-container">
+        <button class="menu">
+          <%= img "images/hamburger.svg", alt:"Menu" %>
+        </button>
+        <a href="/">
+          <h1 class="logo">Oscars 2015</h1>
+          <section class="app-bar-actions">
+          <!-- Put App Bar Buttons Here -->
+          </section>
+        </a>
+      </div>
+    </header>
+
+    <nav class="navdrawer-container">
+      <h4>Navigation</h4>
+      <ul class="promote-layer">
+        <% if !@user.nil? && @user.admin? %>
+          <li><a href="/admin">Admin</a></li>
+        <% end %>
+        <li><a href="/picks">Picks</a></li>
+        <li><a href="/">Categories</a></li>
+        <li><a href="/leaderboard">Leaderboard</a></li>
+        <li><a href="/pay">Pay</a></li>
+        <li><a href="/logout">Log Out</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <%= styled_flash %>
+      <%= yield %>
+    </main>
+
+
+
+    <footer></footer>
+
+    <!-- build:js scripts/main.min.js -->
+    <%= js :app %>
+    <!-- endbuild -->
+
+    <!-- Built with love using Web Starter Kit -->
+  </body>
+</html>

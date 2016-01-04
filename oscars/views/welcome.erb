@@ -1,0 +1,22 @@
+<div class="g--half">
+  <h3>Welcome <%= @user.username %></h3>
+  <br />
+  <%= erb :key %>
+</div>
+<div class="g--half g--last">
+  <h3>Categories</h3>
+  <br />
+  <% Pooler::Category.all.each do |category| %>
+    <a href="<%= URI::encode category.name %>">
+      <% @pick = @user.picks.where(category:category).first %>
+      <% if @pick %>
+        <% @pick_class = @pick.bonus.nil? ? "points-#{@pick.points}" : "points-P" %>
+      <% else %>
+        <% @pick_class = nil %>
+      <% end %>
+      <div class="pick <%= @pick_class %>">
+        <%= category.name %>
+      </div>
+    </a>
+  <% end %>
+</div>

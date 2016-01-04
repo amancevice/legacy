@@ -1,0 +1,32 @@
+<h2>Sign up</h2>
+<%= styled_flash %>
+<br/>
+<form class="swn--form" action='/signup' method='post'>
+  <div class="swn--form-input">
+    <input type='text' name='username' placeholder='full name' required autocomplete='name'/>
+    <span class="highligh"></span>
+    <span class="bar"></span>
+  </div>
+
+  <div class="swn--form-input">
+    <input type='email' name='email' placeholder='email' required autocomplete='email'/>
+    <span class="highligh"></span>
+    <span class="bar"></span>
+  </div>
+
+  <div class="swn--form-input">
+    <input type='password' name='password' placeholder='password' required />
+    <span class="highligh"></span>
+    <span class="bar"></span>
+  </div>
+
+  <div class="swn--form-input">
+    <input type='password' name='confirm_password' placeholder='confirm' required />
+    <span class="highligh"></span>
+    <span class="bar"></span>
+  </div>
+
+  <br/>
+
+  <button class="button--primary" type='submit'>Sign up!</button>
+</form>
