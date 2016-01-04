@@ -1,0 +1,64 @@
+#!/usr/bin/env ruby
+
+require 'yaml'
+require 'active_support/time'
+
+metric_yaml = YAML.load File.read('config/metric_types.yml')
+metric_array = metric_yaml.to_a
+
+timestamps = []
+1000.times do |i|
+  timestamps << (Time.now - rand(24*60).minutes).to_i
+end
+timestamps.sort!
+
+mux_stream = []
+1000.times do |i|
+  metric_type = metric_array[rand 2].first
+  timestamp = timestamps[i]
+  if metric_type == 'vessel'
+    id       = rand 25
+    tonnage  = 1000 + rand(1000)
+    distance = rand 100
+
+    mux_stream << [
+      metric_type,
+      timestamp,
+      id,
+      tonnage,
+      distance
+    ].join(',')
+
+  elsif metric_type == 'wind_speed'
+    lat, lon = [
+      [36.1, -47.5],
+      [25.2, -46.8],
+      [30.9, -19.2],
+      [48.9, -30.3]
+    ][rand(4)]
+    kphs = rand(200).to_f / 10.0
+    mux_stream << [
+      metric_type,
+      timestamp,
+      lat,
+      lon,
+      kphs
+    ].join(',')
+  end
+end
+
+File.open('samples/sample1.out','w') {|f| f.write mux_stream.join("\n") }
+# Move some timestamps into the future for out-of-order testing
+shifted_stream = []
+File.open('samples/sample2.out','w') do |f|
+  mux_stream.count.times do |i|
+    if i % 100 == 0
+      shifted_elem = mux_stream[rand(i)]
+      shifted_stream.delete shifted_elem
+      shifted_stream << shifted_elem
+    else
+      shifted_stream << mux_stream[i]
+    end
+  end
+  f.write shifted_stream.join("\n")
+end

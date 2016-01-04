@@ -1,0 +1,65 @@
+#!/usr/bin/env ruby
+# Copyright (c) 2013 ICRL
+#
+# See the file license.txt for copying permission.
+
+$LOAD_PATH << './lib'
+
+require 'rubygems'
+require 'bundler/setup'
+Bundler.require
+require 'active_support/time'
+require 'csv'
+require 'logger'
+require 'mongo_metrics'
+require 'optparse'
+require 'yaml'
+
+# Default Configuration
+options = {
+  :line_delimiter   => MongoMetrics::MUXStream::DEFAULT_LINE_DELIMITER,
+  :input_delimiter  => MongoMetrics::MUXStream::DEFAULT_DELIMITER,
+  :output_delimiter => MongoMetrics::MUXStream::DEFAULT_DELIMITER,
+  :interval         => Rufus.parse_time_string(''),
+  :logger           => 'log/mux.log'
+}
+OptionParser.new do |opts|
+  opts.banner = "usage: mgm [--line-delimiter=<regex_string>]
+  [--input-delimiter=<character>]
+  [--output-delimiter=<character>]\n\n"
+
+  opts.on '-h', '--help', 'Displays this message' do
+    puts opts
+    exit
+  end
+
+  opts.on '-n DELIMITER', '--line-delimiter DELIMITER', 'Regular Expression denoting new data row' do |n|
+    options[:line_delimiter] = Regexp.new n
+  end
+
+  opts.on '-i DELIMITER', '--input-delimiter DELIMITER', 'Delimiter of STDIN data' do |i|
+    options[:input_delimiter] = i
+  end
+
+  opts.on '-o DELIMITER', '--output-delimiter DELIMITER', 'Delimiter of STDOUT data' do |o|
+    options[:output_delimiter] = o
+  end
+
+  opts.on '-v', '--[no-]verbose', "Toggle logging to STDOUT" do
+    options[:logger] = STDOUT
+  end
+end.parse!
+
+$logger     = Logger.new options[:logger]
+$exceptions = File.open 'log/exceptions.log', 'a'
+
+# Configure Environment
+MongoMetrics::Config.mongo
+MongoMetrics::Config.metrics
+
+# MongoMetrics GO
+mux = MongoMetrics::MUXStream.new options
+mux.read
+
+# Clean up
+$exceptions.close

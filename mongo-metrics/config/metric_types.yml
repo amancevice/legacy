@@ -1,0 +1,27 @@
+vessel:
+  interval: 1h
+  columns:
+    - vid
+    - tonnage
+    - distance
+  dimensions:
+    - vid
+  measures:
+    - tonnage:
+      - avg
+    - distance:
+      - sum
+wind_speed:
+  interval: 30m
+  columns:
+    - lat
+    - lon
+    - kph
+  dimensions:
+    - lat
+    - lon
+  measures:
+    - kph:
+      - max
+      - min
+      - avg
