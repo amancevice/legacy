@@ -1,0 +1,12 @@
+<page template_path="/apps/mySite/templates/myPage"
+	c:capture="metadata" c:name="TargetCMS.Path" c:type="attribute" c:attribute="path"
+	c:capture="metadata" c:name="TargetCMS.Filename" c:type="attribute" c:attribute="filename"
+	c:capture="metadata" c:name="TargetCMS.Label" c:type="attribute" c:attribute="label"
+	
+	<node path="jcr:content/myComponent" type="nt:unstructured">
+		<!-- A static property common to all node-components of type "myComponent" -->
+		<prop name="sling:resourceType" type="String">foundation/components/myComponent</prop>
+		<!-- A dynamic property whose value will be pulled from metadata -->
+		<prop name="myProp" type="String" c:capture="metadata" c:name="TargetCMS.myProp" c:type="text" c:retain="false">
+	</node>
+</page>

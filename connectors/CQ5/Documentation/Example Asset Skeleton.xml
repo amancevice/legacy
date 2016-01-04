@@ -1,0 +1,21 @@
+<asset type="dam:Asset" 
+	c:capture="metadata" c:name="TargetCMS.Path" c:type="attribute" c:attribute="path"
+	c:capture="metadata" c:name="TargetCMS.Filename" c:type="attribute" c:attribute="filename">
+	
+	<node path="jcr:content" type="dam:AssetContent"/>
+		<prop name="cq:lastPublished" type="Date c:name="TargetCMS.LastPublished" c:retain="false">
+		<prop name="cq:lastPublishedBy" type="String" c:name="TargetCMS.Author" c:retain="false">
+		<prop name="cq:lastReplicationStatus" type="String" c:name="targetCMS.LastReplicationStatus" c:retain="false">
+		<prop name="cq:tags" type="String[]" c:name="TargetCMS.Tags" c:retain="false">
+	<node path="jcr:content/metadata" type="nt:unstructured">
+		<!-- add metadata properties here -->
+	</node>
+	<node path="jcr:content/renditions" type="nt:folder"/>
+	<node path="jcr:content/renditions/original" type="nt:file"/>
+	<node path="jcr:content/renditions/original/jcr:content" type="nt:resource">
+		<prop name="jcr:lastModified" type="Date"/>
+		<prop name="jcr:data" type="Binary"/>
+		<prop name="jcr:mimeType" type="String" c:name="Identify Metadata.Content-Type" c:retain="false"/>
+		<prop name="jcr:encoding" type="String" c:name="TargetCMS.Encoding" c:retain="false"/>
+	</node>
+</asset>

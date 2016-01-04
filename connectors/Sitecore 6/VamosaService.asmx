@@ -1,0 +1,1 @@
+﻿<%@ WebService Language="C#" CodeBehind="VamosaService.asmx.cs" Class="VamosaService.VamosaService" %>

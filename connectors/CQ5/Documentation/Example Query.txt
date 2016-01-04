@@ -1,0 +1,9 @@
+FROM com.vamosa.content.ContentDescriptor cd 
+JOIN cd.metadataSet md 
+JOIN cd.metadataSet md1 
+JOIN cd.metadataSet md2 
+
+WHERE cd.project.id=:projectId 
+AND md.attribute='Identify Metadata.Content-Type' AND md.value like '%xhtml%' 
+AND md1.attribute = 'Vamosa.Migrate' AND md1.value = 'yes' 
+AND md2.attribute = 'TargetCMS.CQ Handle' ORDER BY md2.value
